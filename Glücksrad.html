@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello, WebVR! • A-Frame</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame" />
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+
+</head>
+
+
+<body>
+
+  <a-scene cursor="rayOrigin: mouse">
+
+    <a-entity id='cameraWrapper' position="0 0 10">
+      <a-camera wasd-controls="enabled:true" look-controls="enabled: true"
+        animation="property:position; dur:2000; to: 0 -0.3 -8">
+      </a-camera>
+    </a-entity>
+
+    <a-assets>
+      <audio id="wheel" src="Wheel.mp3" preload="auto"> </audio>
+    </a-assets>
+
+    <a-entity>
+      <a-text id="Start" value="Start" position="0.5 -1 0.3 " width="3" rotation="0 0 0" color="white"></a-text>
+    </a-entity>
+
+    <a-entity light="type: ambient; color: #BBB"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 0.3" position="-0.5 1 2"></a-entity>
+
+    <a-box width="0.3" height="2.4" depth="0.1" position="0 0 -0.05" rotation="0 0 0" color="#E4C099"> </a-box>
+    <a-box width="0.1" height="3" depth="1" position="0 -1.2 0" rotation="0 0 90" color="#E5C099"> </a-box>
+    <a-cylinder radius=0.04 height="0.25" position="0 1.1 0" rotation="90 0 0" color="#F37F6A">
+      <a-box width="0.01" height="0.03" depth="0.14" position="0 0.11 0.1" rotation="0 0 0" color="#F37F6A"> </a-box>
+    </a-cylinder>
+
+    <a-entity position="0 0 0.06" rotation="0 0 0 " geometry="primitive: circle; radius:0.05; segments:128"
+      material="color:#F37F6A"></a-entity>
+
+    <a-entity id="Drehflaeche">
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:0 ;thetaLength:15" material="color:#121212">
+        <a-entity position="0.0 0 0.95" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Robotertanz" position="0.042 0.05 -0.45" width="2" rotation="-90 0 82" color="white"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:15 ;thetaLength:15" material="color:#fff">
+        <a-entity position="0.246 0 0.918" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Hampelmann" position="0.15 0.05 -0.38" width="2" rotation="-90 0 68" color="white"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:30 ;thetaLength:15" material="color:#EDCCA4">
+        <a-entity position="0.475 0 0.823" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Anfersen" position="0.36 0.05 -0.47" width="2" rotation="-90 0 55" color="#EDCCA4"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:45 ;thetaLength:15" material="color:#fff">
+        <a-entity position="0.672 0 0.672" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Zehen beruehren" position="0.24 0.05 -0.18" width="2" rotation="-90 0 38" color="white"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:60;thetaLength:15" material="color:#121212">
+        <a-entity position="0.823 0 0.475" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Sterne kitzeln" position="0.40 0.05 -0.15" width="2" rotation="-90 0 25" color="#EDCCA4">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:75 ;thetaLength:15" material="color:#fff">
+        <a-entity position="0.918 0 0.246" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Zehenspitzen" position="0.42 0.05 -0.05" width="2" rotation="-90 0 9" color="white"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:90 ;thetaLength:15" material="color:#EDCCA4">
+        <a-entity position="0.950 0 0" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Rechtes Bein" position="0.45 0.05 0.05" width="2" rotation="-90 0 -9" color="#EDCCA4"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:105 ;thetaLength:15" material="color:#fff">
+        <a-entity position="0.918 0 -0.246" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Linkes Bein" position="0.47 0.05 0.19" width="2" rotation="-90 0 -25" color="white"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:120 ;thetaLength:15" material="color:#121212">
+        <a-entity position="0.823 0 -0.475" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Kniebeuge" position="0.43 0.05 0.34" width="2" rotation="-90 0 -38" color="#EDCCA4"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:135 ;thetaLength:15" material="color:#fff">
+        <a-entity position="0.672 0 -0.672" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Ausschuetteln" position="0.26 0.05 0.32" width="2" rotation="-90 0 -55" color="white"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:150 ;thetaLength:15" material="color:#EDCCA4">
+        <a-entity position="0.475 0 -0.823" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Flugzeug" position="0.24 0.05 0.56" width="2" rotation="-90 0 -68" color="#EDCCA4"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:165 ;thetaLength:15" material="color:#F37F6A">
+        <a-entity position="0.246 0 -0.918" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Zeitlupe" position="0.08 0.05 0.64" width="2" rotation="-90 0 -82" color="white"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:180 ;thetaLength:15" material="color:#121212">
+        <a-entity position="0 0 -0.950" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Auf und nieder" position="-0.05 0.05 0.38" width="2" rotation="-90 0 -98" color="#EDCCA4">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:195 ;thetaLength:15" material="color:#fff">
+        <a-entity position="-0.246 0 -0.918" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Knie zum Ellenbogen" position="-0.07 0.05 0.18" width="1.9" rotation="-90 0 -112" color="white">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:210 ;thetaLength:15" material="color:#EDCCA4">
+        <a-entity position="-0.475 0 -0.823" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Elefantengruss" position="-0.22 0.05 0.28" width="2" rotation="-90 0 -125" color="#EDCCA4">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:225 ;thetaLength:15" material="color:#fff">
+        <a-entity position="-0.672 0 -0.672" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Schlaefen massieren" position="-0.15 0.05 0.12" width="1.9" rotation="-90 0 -142" color="white">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:240 ;thetaLength:15" material="color:#121212">
+        <a-entity position="-0.823 0 -0.475" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Blume im Wind" position="-0.34 0.05 0.15" width="2" rotation="-90 0 -158" color="#EDCCA4">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:255 ;thetaLength:15" material="color:#fff">
+        <a-entity position="-0.918 0 -0.246" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Ein- und Ausatmen" position="-0.28 0.05 0.04" width="1.9" rotation="-90 0 -171" color="white">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:270 ;thetaLength:15" material="color:#EDCCA4">
+        <a-entity position="-0.950 0 0" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Beine umarmen" position="-0.34 0.05 -0.04" width="2" rotation="-90 0 -186" color="#EDCCA4">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:285 ;thetaLength:15" material="color:#fff">
+        <a-entity position="-0.918 0 0.246" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Froschhuepfer" position="-0.38 0.05 -0.15" width="1.9" rotation="-90 0 -202" color="white">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:300 ;thetaLength:15" material="color:#121212">
+        <a-entity position="-0.823 0 0.475" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Sprint" position="-0.58 0.05 -0.42" width="2" rotation="-90 0 -218" color="#EDCCA4"></a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:315 ;thetaLength:15" material="color:#fff">
+        <a-entity position="-0.672 0 0.672" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Huefte kreisen" position="-0.24 0.05 -0.31" width="1.9" rotation="-90 0 -232" color="white">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:330 ;thetaLength:15" material="color:#EDCCA4">
+        <a-entity position="-0.475 0 0.823" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Kopf kreisen" position="-0.18 0.05 -0.42" width="2" rotation="-90 0 -248" color="#EDCCA4">
+        </a-text>
+      </a-entity>
+
+      <a-entity position="0 0 0" rotation="90 0 0"
+        geometry="primitive: cylinder; height:0.1; thetaStart:345 ;thetaLength:15" material="color:#fff">
+        <a-entity position="-0.246 0 0.918" geometry="primitive: cylinder; height:0.15; radius:0.02"
+          material="color:#EDCCA4"></a-entity>
+        <a-text value="Marschieren" position="-0.07 0.05 -0.47" width="1.9" rotation="-90 0 -262" color="white">
+        </a-text>
+      </a-entity>
+
+
+    </a-entity>
+
+    <a-sky material="color:#EAEAEA"></a-sky>
+
+  </a-scene>
+
+  <script>
+
+    var min = 1;
+    var max = 24;
+    const x = 15 * Math.round(((Math.random() * (max - min)) + min)) + 1072.5;
+    console.log(`${x}`);
+    const y = 15 * Math.round(((Math.random() * (max - min)) + min)) + 1080 + x;
+    console.log(`${y}`);
+    const z = 15 * Math.round(((Math.random() * (max - min)) + min)) + 1080 + y;
+    console.log(`${z}`);
+    const a = 15 * Math.round(((Math.random() * (max - min)) + min)) + 1080 + z;
+    console.log(`${a}`);
+    const b = 15 * Math.round(((Math.random() * (max - min)) + min)) + 1080 + a;
+    console.log(`${b}`);
+
+
+    var wheelsound = document.getElementById('wheel')
+    var Drehflaeche = document.getElementById('Drehflaeche')
+    var Start = document.getElementById('Start')
+
+
+    Start.addEventListener('click', function () {
+
+      play();
+    });
+
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function play() {
+
+      Drehflaeche.setAttribute('animation__first', {
+        property: 'rotation',
+        from: '0 0 0',
+        to: `0 0 ${x}`,
+        dur: '9000',
+        easing: 'easeOutCirc',
+        loop: 'false',
+        delay: '1400',
+
+
+      });
+
+      wheelsound.play();
+      await sleep(30000);
+
+
+      Drehflaeche.setAttribute('animation__second', {
+        property: 'rotation',
+        delay: '1400',
+        from: `0 0 ${x}`,
+        to: `0 0 ${y}`,
+        dur: '9000',
+        easing: 'easeOutCirc',
+        loop: 'false'
+
+      })
+
+      wheelsound.play();
+      await sleep(30000);
+
+
+      Drehflaeche.setAttribute('animation__third', {
+        property: 'rotation',
+        delay: '1400',
+        from: `0 0  ${y}`,
+        to: `0 0 ${z}`,
+        dur: '9000',
+        easing: 'easeOutCirc',
+        loop: 'false'
+
+      });
+      wheelsound.play();
+      await sleep(30000);
+
+
+      Drehflaeche.setAttribute('animation__fourth', {
+        property: 'rotation',
+        delay: '1400',
+        from: `0 0  ${z}`,
+        to: `0 0 ${a}`,
+        dur: '9000',
+        easing: 'easeOutCirc',
+        loop: 'false'
+
+      });
+
+      wheelsound.play();
+      await sleep(30000);
+
+
+      Drehflaeche.setAttribute('animation__fifth', {
+        property: 'rotation',
+        delay: '1400',
+        from: `0 0  ${a}`,
+        to: `0 0 ${b}`,
+        dur: '9000',
+        easing: 'easeOutCirc',
+        loop: 'false'
+
+      });
+
+      wheelsound.play();
+      await sleep(30000);
+
+    }
+
+  </script>
+
+</body>
+
+</html>
